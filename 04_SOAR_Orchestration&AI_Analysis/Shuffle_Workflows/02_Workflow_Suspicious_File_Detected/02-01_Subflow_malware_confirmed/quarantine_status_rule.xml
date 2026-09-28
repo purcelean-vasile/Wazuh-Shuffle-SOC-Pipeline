@@ -1,0 +1,16 @@
+<!-- ####################################################### -->
+<!-- ################## 5. Active_Response ################# -->
+<!-- ####################################################### -->
+
+<group name="Shuffle_Active_Response,">
+  <rule id="100110" level="12">
+    <decoded_as>shuffle_active_response_quarantine</decoded_as>
+    <match type="pcre2">^QUARANTINE MALWARE STATUS Failed </match>
+    <description>QUARANTINE FAILED - malware file still active on disk</description>
+  </rule>
+  <rule id="100111" level="3">
+    <decoded_as>shuffle_active_response_quarantine</decoded_as>
+    <match type="pcre2">^QUARANTINE MALWARE STATUS Successfully </match>
+    <description>QUARANTINE SUCCEDED - malware file was moved to quarantine</description>
+  </rule>
+</group>
